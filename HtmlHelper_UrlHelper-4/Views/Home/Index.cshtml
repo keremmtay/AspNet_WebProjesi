@@ -1,0 +1,85 @@
+﻿<div>
+    <h1>Home Index</h1>
+
+    <h4>Url.Action</h4>
+
+    <p>Url.Action: Url bilgisi oluşturmak için kullanılıyor.</p>
+
+    @Url.Action("UrunleriGetir", "Product")
+    @*/Product/UrunleriGetir*@
+
+    <br />
+
+    @Url.Action("UrunleriGetir", "Product", new {id = 10})
+    @*/Product/UrunleriGetir/10*@
+
+</div>
+
+
+<div>
+    <h4>UrActionLink</h4>
+
+    <p>Url.ActionLink: link'i domain bilgisi ile beraber oluşturuyor.</p>
+
+
+    @Url.ActionLink("UrunleriGetir", "Product")
+    @*https://localhost:7030/Product/UrunleriGetir*@
+
+    <br />
+
+    @Url.ActionLink("UrunleriGetir", "Product", new {id = 10})
+    @*https://localhost:7030/Product/UrunleriGetir/10*@
+
+    <br />
+
+    <a href="@Url.ActionLink("UrunleriGetir", "Product")">Ürünleri Getir</a>
+
+    @*Bu şekilde yazılan yorum satırları sayfa kaynağında görünmez.*@
+
+    <!-- Bu satır sayfa kaynağını görüntüldeğiinizde görünecektir.-->
+
+</div>
+
+<div>
+    <h1>HtmlHelper Metotları</h1>
+
+    <h4>Html.Partial() Metodu</h4>
+
+    @Html.Partial("Partials/UserPartial")
+
+</div>
+
+<div>
+    <h1>Html.BeginForm() Metodu</h1>
+
+    <p>Html.BeginForm() Metodu: Form nesnelerini oluşturmaya yarayan yardımcı metodtur.</p>
+
+    <p>
+        Html.BeginForm(Action, Controller, method(Post))
+    </p>
+
+    @using(Html.BeginForm("VeriAl", "Home", FormMethod.Post))
+    {
+        @Html.LabelForModel("Adınız...: ")
+        @Html.TextBox("Name")
+        @Html.CheckBox("abc1")
+
+        <br />
+        
+        <input type="submit" value="Gönder"/>
+    }
+
+
+</div>
+
+<div>
+
+    <h1>Html.ActionLink() Metodu</h1>
+
+    <p>Html.ActionLink() Metodu: Link oluşturmaya yarayan yardımcı metodtur. Yani aslında bize bir tane a tagi oluşturuyor.</p>
+
+    <p>Html.ActionLink("Link Adı", "Action", "Controller")</p>
+
+    @Html.ActionLink("Ürünleri Göster", "UrunleriGetir", "Product")
+
+</div>

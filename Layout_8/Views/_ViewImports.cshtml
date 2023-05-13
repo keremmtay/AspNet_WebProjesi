@@ -1,0 +1,16 @@
+﻿@*
+
+Razor sayfalarında kütüphane ve namespace tanımlamalarını yaptığımız bölümdür. Her sayfada bu tanımlamaları yapmak yerine bu sayfada bir kere tanımlıyoruz ve istediğimiz diğer sayfalarda da bu kütüphanelerin içindeki Class'ları kullanırız.
+
+Örneğin using tanımlamaları ya da tagHelper kütüphanesinin eklenmesi gibi...
+
+
+_ViewImports.cshtml'in konumlandığı yer : Views/_ViewImports.cshtml
+
+*@
+
+
+@using Layout_8.Models
+
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

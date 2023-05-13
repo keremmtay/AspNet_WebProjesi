@@ -1,0 +1,75 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Data_Binding_6.Models.Product
+
+
+
+@*Model ile binding işlemi yapmadan önce programı çalıştırdığımızda Otomatik olarak arka planda, formdan gelen veriler ile formda yazan ilgili action'daki parametreler eşleştirilir ve veriler bu şekilde alınır.
+
+    Eğer bir nesne içinde tanımlandıysa, bu durumda, nesne içindeki property'ler ile input'ta name içinde yazılan isimler eşleşerek bind işlemi otomatik olarak yapılmış olur. name="Id", name="Name" gibi
+
+    Eğer cshtml içinde model olarak ilgili nesneyi tanımlarsam, bu işimizi daha da kolaylaştırıyor. Bu durumda ilgili input'lar taghelper ile tanımlandığında, product içindeki alanlar buraya otomatik olarak geliyor. Ve bu durumda o inputun hangi veriyi alacağını hatasız bir şekilde programa bildiriyorum.
+
+    Bu şekilde bind etmenin bir diğer avantajı da eğer ki ben buraya bir product nesnesi gönderirsem, bu nesnenin içinde bulunan veriler otomatik olarak ilgili input'lara asp-for ile otomatik olarak eklenecektir. Bu da bize update işlemi yapmak istediğimizde verilerin otomatik olarak ilgili inputlarda hazır bir şekilde gelmesini sağlayacaktır. Bu şekilde ilgili işlemleri çok hızlı yapmamıza olanak sağlayacaktır.
+*@
+
+<form asp-action="CreateProduct" asp-controller="Product" method="post">
+
+    <div>
+        <label asp-for="Id">Id</label>
+        @*<label>Id</label>*@
+        @*<input type="text" name="Id" placeholder="Id"/>*@
+
+        <input type="text" asp-for="Id" placeholder="Product Id"/>
+
+    </div>
+
+    <div>
+
+        <label asp-for="Name">Ürün Adı</label>
+        @*<input type="text" name="Name" placeholder="Ürün Adını Giriniz" />*@
+
+        <input type="text" asp-for="Name" placeholder="Ürün Adını Giriniz" />
+
+    </div>
+
+    <div>
+
+        <label asp-for="Description">Açıklama</label>
+        @*Açıklama yazıını burada verebiliyorum. Eğer b text'i burada vermez isem asp-for ile ilgili text model'den (Product içindeki) property'den gelecektir. Örnek için Quantity'e bakabilirsiniz.*@
+
+        @*<input type="text" name="Description" placeholder="Açıklama Giriniz" />*@
+
+        <input type="text" asp-for="Description" placeholder="Açıklama Giriniz" />
+
+    </div>
+
+    <div>
+
+        <label asp-for="Quantity"></label>
+        @*<input type="number" name="Quantity" placeholder="Adet Giriniz" />*@
+
+        <input type="number" asp-for="Quantity" placeholder="Adet Giriniz" />
+
+    </div>
+
+    <div>
+
+        <label asp-for="Price">Fiyat</label>
+        @*<input type="text" name="Price" placeholder="Fiyat Giriniz" />*@
+
+        <input type="text" asp-for="Price" placeholder="Fiyat Giriniz" />
+
+    </div>
+
+    
+
+    <div>
+        <button type="submit">Kaydet</button>
+    </div>
+
+
+
+
+
+
+</form>

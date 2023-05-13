@@ -1,0 +1,24 @@
+﻿@model List<Viewe_Veri_Gonderme_3.Models.Product>
+
+    <div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Adedi</th>
+                <th>Ürün Fiyatı</th>
+            </tr>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td>@p.Id</td>
+                        <td>@p.UrunAdi</td>
+                        <td>@p.Adet</td>
+                        <td>@p.Fiyat</td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>

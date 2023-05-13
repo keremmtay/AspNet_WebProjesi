@@ -1,0 +1,25 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model TagHelper_5.Models.User
+
+@*<form action="Home/SaveUser" method="post">*@
+
+<form asp-controller="Home" asp-action="SaveUser" method="post">
+
+    <label asp-for="FirstName">Adınız</label>
+    <input asp-for="FirstName" />
+
+    <br /> <br />
+
+    <label asp-for="LastName">Soyadınız</label>
+    <input asp-for="LastName" />
+
+    <br /> <br />
+
+    <button type="submit">Kaydet</button>
+
+</form>
+
+<br />
+<br />
+
+<a asp-action="Deneme" asp-controller="Home">Deneme sayfasına git</a>
